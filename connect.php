@@ -1,5 +1,5 @@
 <?php
 
-$mysql = mysqli_connect('localhost', 'root', 'root', 'ter');
+$mysql = mysqli_connect('MySQL-8.2', 'root', '', 'ter');
 
 ?>

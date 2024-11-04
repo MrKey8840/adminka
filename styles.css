@@ -51,3 +51,7 @@
 	color: white;
 	text-decoration: none;
 }
+textarea{
+	width: 600px;
+	height: 400px;
+}

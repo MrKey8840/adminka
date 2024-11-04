@@ -11,6 +11,7 @@ if(empty($_SESSION['is_admin'])){
 }
 
 echo '<link rel="stylesheet" type="text/css" href="styles.css">
+<script type="text/javascript" src="scripts.js"></script>
 <div id="adminpage">
 <div id="menuadmin">
 	<form method="POST" action="adminpage.php"><button type="submit" name="content">Контент</button></form>
@@ -31,8 +32,9 @@ if(empty($_SESSION['adminpage'])){
 }
 elseif($_SESSION['adminpage'] == 'content'){
 	echo "<h1>Контент</h1>
+	<button onclick='bold()'><b>Ж</b></button><button onclick='italic()'><i>К</i></button><button onclick='underline()'><u>Ч</u></button>
 	<form  method='POST' action='DBupdate.php'>
-	<textarea name='content' placeholder='Контент'>";
+	<textarea name='content' placeholder='Контент' id='textarea'>";
 	echo mysqli_fetch_array(mysqli_query($mysql, "SELECT content FROM page WHERE id = 1"))[0];
 	echo "</textarea><br>
 	<input type='submit' value='Сохранить'></form>";}

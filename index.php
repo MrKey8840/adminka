@@ -36,6 +36,8 @@
 		<?php echo mysqli_fetch_array(mysqli_query($mysql, "SELECT phone FROM page WHERE id = 1"))[0]; ?>
 		<br>
 		<?php echo mysqli_fetch_array(mysqli_query($mysql, "SELECT email FROM page WHERE id = 1"))[0]; ?>
+		<br>
+		<a href="admin.php" target="_blank">К админке</a>
 	</p>
 </div>
 
