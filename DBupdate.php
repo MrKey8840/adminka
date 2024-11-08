@@ -2,11 +2,13 @@
 
 include "connect.php";
 
+session_start();
+
 if(isset($_POST['header'])){
 	mysqli_query($mysql, "UPDATE page SET header='".$_POST['header']."' WHERE id = 1");
 }
 if(isset($_POST['content'])){
-	mysqli_query($mysql, "UPDATE page SET content='".$_POST['content']."' WHERE id = 1");	
+	mysqli_query($mysql, "UPDATE page SET content='".$_POST['content']."' WHERE id = ".$_SESSION['content_page']);	
 }
 if(isset($_POST['phone'])){
 	mysqli_query($mysql, "UPDATE page SET phone='".$_POST['phone']."' WHERE id = 1");

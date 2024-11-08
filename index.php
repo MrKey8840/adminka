@@ -1,4 +1,4 @@
-<?php include "connect.php"; ?>
+<?php include "connect.php"; session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,9 +26,16 @@
 		?>
 	</p>
 </div>
-
+<div style="display: flex">
+	<form method="POST" action="select_content.php"><button name="1">Контент 1</button></form>
+	<form method="POST" action="select_content.php"><button name="2">Контент 2</button></form>
+	<form method="POST" action="select_content.php"><button name="3">Контент 3</button></form>
+</div>
 <div id="content">
-	<?php echo mysqli_fetch_array(mysqli_query($mysql, "SELECT content FROM page WHERE id = 1"))[0]; ?>
+	<?php
+	if(empty($_SESSION['cnt'])){$_SESSION['cnt'] = 1;}
+	echo mysqli_fetch_array(mysqli_query($mysql, "SELECT content FROM page WHERE id = ".$_SESSION['cnt']))[0];
+	?>
 </div>
 
 <div id="basement">

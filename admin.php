@@ -31,11 +31,21 @@ if(empty($_SESSION['adminpage'])){
 	<input type='submit' value='Сохранить'></form>";
 }
 elseif($_SESSION['adminpage'] == 'content'){
-	echo "<h1>Контент</h1>
+	if(empty($_SESSION['content_page'])){
+		$_SESSION['content_page'] = 1;
+	}
+	echo "<div style='display: flex;'><form method='POST' action='content_page.php'><button class='content_btn' name='content_page_1'>Контент 1</button></form>&nbsp
+	<form method='POST' action='content_page.php'><button class='content_btn' name='content_page_2'>Контент 2</button></form>&nbsp
+	<form method='POST' action='content_page.php'><button class='content_btn' name='content_page_3'>Контент 3</button></form></div>
 	<button onclick='bold()'><b>Ж</b></button><button onclick='italic()'><i>К</i></button><button onclick='underline()'><u>Ч</u></button>
+	<button onclick='color(0)' style='background-color: red; color: red;'>К</button>
+	<button onclick='color(1)' style='background-color: blue; color: blue;'>К</button>
+	<button onclick='color(2)' style='background-color: purple; color: purple;'>К</button>
+	<button onclick='color(3)' style='background-color: green; color: green;'>К</button>
+	<button onclick='color(4)' style='background-color: brown; color: brown;'>К</button>
 	<form  method='POST' action='DBupdate.php'>
 	<textarea name='content' placeholder='Контент' id='textarea'>";
-	echo mysqli_fetch_array(mysqli_query($mysql, "SELECT content FROM page WHERE id = 1"))[0];
+	echo mysqli_fetch_array(mysqli_query($mysql, "SELECT content FROM page WHERE id = ".$_SESSION['content_page']))[0];
 	echo "</textarea><br>
 	<input type='submit' value='Сохранить'></form>";}
 elseif ($_SESSION['adminpage'] == 'header'){
