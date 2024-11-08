@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 01 2024 г., 16:15
+-- Время создания: Ноя 08 2024 г., 16:49
 -- Версия сервера: 10.3.22-MariaDB
 -- Версия PHP: 7.1.33
 
@@ -61,7 +61,9 @@ CREATE TABLE `page` (
 --
 
 INSERT INTO `page` (`id`, `header`, `content`, `phone`, `email`) VALUES
-(1, 'заголовок', 'асмнлморигндло\r\nнпмшигролтдл\r\nротьщбзж', '+784398980983', 'dfff@mail.ru');
+(1, 'заголовок', 'ejjje<font color=\"red\">kjkjfel<b>kjfejm<font color=\"brown\">veojrfm</font>ujecmrf</font>e<font color=\"green\">jfcjemr</b>jfcjr</font>\r\n\r\n<b><font color=\"purple\">ttttt</<font color=\"purple\">font</font>></b>', '+784398980983', 'dfff@mail.ru'),
+(2, '', 'jfe<b>ijf</b>eijoij', '', ''),
+(3, '', 'Контент 3', '', '');
 
 -- --------------------------------------------------------
 
@@ -119,7 +121,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT для таблицы `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
