@@ -29,7 +29,7 @@ body{
 	cursor: pointer;
 	background-color: gray;
 }
-#header, #basement{
+#basement{
 	vertical-align: middle;
 	height: 70px;
 	width: 100%;
@@ -47,17 +47,6 @@ body{
 	float: right;
 	margin-right: 1%;
 	color: white;
-}
-#header p{
-	line-height: 70px;
-	text-align: center;
-	font-size: 25px;
-	color: white;
-	text-decoration: none;
-}
-#header p a{
-	color: white;
-	text-decoration: none;
 }
 textarea{
 	width: 600px;
